@@ -1,0 +1,22 @@
+﻿@page "/Issues"
+@using global::SMI.DataAccess.Models
+@using global::SMI.DataAccess.Services
+
+<h3>Issues</h3>
+
+<EditForm FormName="Chat" Model="newIssue" OnSubmit="SubmitNewIssue">
+    <InputText @bind-Value="newIssue.Title"></InputText>
+    <InputText @bind-Value="newIssue.Category"></InputText>
+    <button class="btn btn-danger" type="submit">Submit</button>
+</EditForm>
+
+@code {
+    
+    private Issue newIssue = new Issue();
+
+    private async Task SubmitNewIssue()
+    {
+        // await IssueRepository.AddAsync(newIssue);
+        // newIssue = new Issue(); 
+    }
+}
